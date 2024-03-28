@@ -17,7 +17,9 @@ export const Context = ({ children }) => {
                 localStorage.setItem('data', JSON.stringify([...state, action.obj]))
                 return state = JSON.parse(localStorage.getItem('data'))
             case "editUser":
-                const updatedState = state.map(item => item.id === action.obj.id ? action.obj : item)
+                const updatedState = state.map(item => item.id === action.obj.id
+                    ? action.obj
+                    : item)
                 localStorage.setItem('data', JSON.stringify(updatedState))
                 return updatedState
             default:
@@ -25,6 +27,8 @@ export const Context = ({ children }) => {
         }
     }
     return (
-        <ContextData.Provider value={{ state, dispatch }}>{children}</ContextData.Provider>
+        <ContextData.Provider value={{ state, dispatch }}>
+            {children}
+        </ContextData.Provider>
     )
 }

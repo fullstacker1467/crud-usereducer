@@ -46,8 +46,9 @@ export const Home = () => {
                                                 {item.gender}
                                             </td>
                                             <td className="px-6 py-4 flex gap-4">
-                                                <Link to={`edit/${item.id}`} className='bg-blue-400 text-white px-4 py-2'>edit</Link>
+                                                <Link to={`/edit/${item.id}`} className='bg-blue-400 text-white px-4 py-2'>edit</Link>
                                                 <button onClick={() => dispatch({ type: 'removeUser', id: item.id })} className='bg-red-500 text-white px-4 py-2'>Delete</button>
+                                                <Link to={`/detail/${item.id}`} className='bg-green-700 text-white px-4 py-2'>View</Link>
                                             </td>
                                         </tr>
                                     ))

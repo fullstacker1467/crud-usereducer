@@ -4,6 +4,7 @@ import { RootLayout } from './layouts/RootLayout'
 import { Home } from './pages/Home'
 import { Add } from './pages/Add'
 import { Edit } from './pages/Edit'
+import { Detail } from './pages/Detail'
 
 export const App = () => {
   const router = createBrowserRouter([
@@ -14,6 +15,10 @@ export const App = () => {
         {
           index: true,
           element: <Home />
+        },
+        {
+          path: 'detail/:id',
+          element: <Detail />
         },
         {
           path: 'add',
